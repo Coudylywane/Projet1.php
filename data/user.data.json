@@ -1,0 +1,61 @@
+[
+    {
+        "login": "admin@gmail.com",
+        "password": "admin@1",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "login": "joueur@gmail.com",
+        "password": "joueur@1",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "libasse",
+        "nom": "laye",
+        "login": "laye@gmail.com",
+        "password": "1234567",
+        "conpassword": "1234567",
+        "avatar": "",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "bineta",
+        "nom": "wane",
+        "login": "bineta@gmail.com",
+        "password": "12345678",
+        "conpassword": "12345678",
+        "avatar": "tree-736885_1280.jpg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "yacine",
+        "nom": "diouf",
+        "login": "diouf@gmail.com",
+        "password": "diouf12",
+        "conpassword": "diouf12",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "aaaa",
+        "nom": "aaaa",
+        "login": "aa@gmail.com",
+        "password": "12345678",
+        "conpassword": "12345678",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "avatar": "valentines-day-624440_1920.jpg"
+    },
+    {
+        "prenom": "aicha",
+        "nom": "wane",
+        "login": "wane@gmail.com",
+        "password": "123456789",
+        "conpassword": "123456789",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "avatar": "tree-736885_1280.jpg"
+    }
+]

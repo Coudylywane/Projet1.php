@@ -1,0 +1,74 @@
+
+.bg-danger{
+  background-color: #C81520;
+}
+
+.logo-header{
+  height: 120px;
+}
+h2{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin-top: -11%;
+  margin-left: 15%;
+}
+.form-control{
+  width: 50%;
+}
+
+.lien{
+ margin-left: 25%;
+  color:#C81520;
+}
+
+a.hover{
+  color: #C81520;
+
+}
+.image{
+width: 20%;
+margin-left: 75%;
+margin-top: 18%;
+}
+
+.container{
+  margin-top: 1%;
+ margin-left: 10%;
+}
+/* h3{
+  margin-left: 78%;
+  font-size: 23px; */
+
+.var{
+  color: #C81520;
+}
+
+.avatar{
+ margin-left: -50%;
+ width: 80%;
+ margin-top: 10%;
+}
+
+.h3{
+  margin-left: -50%;
+}
+
+.mot-de-pass{
+  width: 105%;
+}
+
+.button{
+  margin-top: 4%;
+}
+
+.buttons{
+  margin-top: 3%;
+}
+
+
+/* body{
+  background-image: url(../img/image1.png);
+  background-position: ;
+  background-repeat: no-repeat;
+} */

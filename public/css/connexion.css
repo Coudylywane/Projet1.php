@@ -1,0 +1,77 @@
+
+span{
+  font-size:30px;
+  color:grey;
+  margin-left:-37px;
+  margin-top:-40px;
+  }
+ body{
+    background-image: url(../public/img/image1.png);
+  }
+  
+ .header{
+   background-color: #C81520;
+   height: 110px;
+ }
+ 
+ 
+  .lien{
+    color:#C81520;
+  }
+ 
+   .titre{
+   color: white;
+   text-align: center;
+   padding-bottom: 200px;
+ 
+ } 
+ .button{
+  background-color: #C81520;
+  color: white;
+ }
+ 
+ .body{
+   
+   width: 50%;
+  margin-left: 25%;
+   color: grey;
+   height: 70px;
+ }
+ 
+ .login{
+   background: #C81520;
+   margin-top:5%;
+   width: 50%;
+   padding: 20px;
+   margin-left: 25%;
+   color: white;
+   height: 70px;
+ } */
+ 
+ .champs{
+   margin-top:5%;
+   width: 50%;
+    margin-left: 25%;
+   color: grey;
+   height: 70px;
+   background-color: #C81520;
+ }
+ .logo{
+    height: 20%;
+ }
+
+ .icone{
+     display: flex;
+     margin-left: 20%;
+ }
+
+ 
+.button{
+  /* width: 20%;
+  height: 50px; */
+  border: none;
+}
+
+  
+
+ 

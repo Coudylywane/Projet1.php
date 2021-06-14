@@ -1,0 +1,48 @@
+ <div class="container-fluid">
+              
+              <div class="titre">
+                  <img src="<?=WEB_ROUTE."img/photo.png"?>" class="image" alt="avatar">
+                 <p class="h3 text-right">Avatar du joueur</p>
+            </div>
+          </div>
+          <div class="container border border-lg-light rounded">
+              <h4>S'INSCRIRE</h4>
+              <p>Pour tester votre niveau de culture general</p>
+              <form>
+                <div class="mb-3">
+                    <label for="">Prenom</label>
+                    <input type="text" class="form-control " name="nom" id="" aria-describedby="emailHelpId" placeholder="Aaaaa">
+                    <small class="form-text text-danger"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="">Nom</label>
+                    <input type="text" class="form-control " name="prenom" id="" aria-describedby="emailHelpId" placeholder="BBBB">
+                    <small class="form-text text-danger"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="">Login</label>
+                    <input type="text" class="form-control " name="login" id="" aria-describedby="emailHelpId" placeholder="aabaa">
+                    <small class="form-text text-danger"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder=".....">
+                    <small class="form-text text-danger"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="conpassword" class="form-control" placeholder=".....">
+                    <small class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                  <label for="">Avatar</label>
+                  <input type="file" class="form-control-file" class="var" name="avatar" id="" placeholder="" aria-describedby="fileHelpId">
+                  <small id="fileHelpId" class="form-text text-muted"></small>
+                </div>
+                <button type="button" class="btn btn-danger">Creer compte</button>
+                <div class="lien">
+                <a href="#" class="lien">Se connecter</a>
+                </div>
+                
+              </form>
+          </div>
