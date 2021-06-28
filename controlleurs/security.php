@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            deconnexion();
         require(ROUTE_DIR.'views/security/connexion.html.php');
        }
+
     }else {
         require(ROUTE_DIR.'views/security/connexion.html.php');
     }
@@ -21,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            unset($_POST['controlleurs']);
            unset($_POST['action']);
         inscription($_POST, $_FILES);
-     
-    }
+        }elseif ($_POST['action']=='creer.question') {
+         question($_POST);
+         }
     }
 }
 
@@ -31,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
     $arrayError=array();
     validation_login($login,'login',$arrayError);
      validation_password($password,'password',$arrayError);
-            
      if (form_valid($arrayError)) {
         $user = find_login_password($login , $password);
         if (count($user)==0) {
@@ -73,10 +74,11 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
          if (form_valid($arrayError)) {
             
               $data['role']=est_admin()?'ROLE_ADMIN': 'ROLE_JOUEUR';
-              
+              add_user($data);
               if (upload_image($files)) {
                 $data['avatar']=$files['avatar']['name'];
-                add_user($data);
+               
+                
                  header('location:'.WEB_ROUTE.'?controlleurs=security&view=connexion');
                  exit();
               }else {
@@ -99,5 +101,10 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
     function deconnexion():void{
         unset ($_SESSION['userConnect']);
     }
+
+
+    
+
+
 ?>
 

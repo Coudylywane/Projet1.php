@@ -73,12 +73,6 @@ function valid_prenom($valeur, string $key,array &$arrayError){
     }
 }
 
-function valid_date($valeur, string $key,array &$arrayError){
-    if (est_vide($valeur)) {
-        $arrayError[$key] = "la date de naissance est obligatoire ";
-    }
-}
-
 // function avatar( array $files, string $key, array &$arrayError){
 //     if (isset($files['avatar']['name']) && !empty($files['avatar']['name'])) {
 //        $tailleMax=2097152;
@@ -95,5 +89,41 @@ function valid_date($valeur, string $key,array &$arrayError){
 //        }
 //     }
 // }
+
+
+
+
+function valid_input($valeur,string $key,array &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Ce champ est obligatoire ";
+    }elseif (est_entier($valeur)) {
+        $arrayError[$key] = "Vous devez saisir une question";
+    }
+}
+
+function valid_point($valeur,string $key,array &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Ce champ est obligatoire ";
+    }elseif ($valeur<=0) {
+        $arrayError[$key] = "Veillez saisir un nombre positif";
+    }
+}
+
+
+function valid_nbr_reponse($valeur,string $key,array &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Ce champ est obligatoire ";
+    }elseif ($valeur<=0) {
+        $arrayError[$key] = "Veillez saisir un nombre positif";
+    }
+}
+
+function valid_type_reponse($valeur,string $key,array &$arrayError){
+    if (est_vide($valeur)) {
+        $arrayError[$key] = "Ce champ est obligatoire ";
+    }
+}
+
+
 
 ?>

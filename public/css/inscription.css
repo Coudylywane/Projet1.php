@@ -1,4 +1,7 @@
 
+.menu{
+  display: none;
+}
 .bg-danger{
   background-color: #C81520;
 }
@@ -6,19 +9,13 @@
 .logo-header{
   height: 120px;
 }
-h2{
-  text-align: center;
-  font-size: 30px;
-  color: white;
-  margin-top: -11%;
-  margin-left: 15%;
-}
+
 .form-control{
   width: 50%;
 }
 
 .lien{
- margin-left: 25%;
+margin-left: -28%;
   color:#C81520;
 }
 
@@ -59,11 +56,11 @@ margin-top: 18%;
 }
 
 .button{
-  margin-top: 4%;
+  margin-top: -3%;
 }
 
 .buttons{
-  margin-top: 3%;
+  margin-top: -1%;
 }
 
 

@@ -1,10 +1,14 @@
 [
     {
+        "prenom": "libasse",
+        "nom": "laye",
         "login": "admin@gmail.com",
         "password": "admin@1",
         "role": "ROLE_ADMIN"
     },
     {
+        "prenom": "libasse",
+        "nom": "laye",
         "login": "joueur@gmail.com",
         "password": "joueur@1",
         "role": "ROLE_JOUEUR"
@@ -57,5 +61,43 @@
         "btn-submit": "",
         "role": "ROLE_JOUEUR",
         "avatar": "tree-736885_1280.jpg"
+    },
+    {
+        "prenom": "slalksqmk",
+        "nom": "wqnnqwd",
+        "login": "qwdd@gmail.com",
+        "password": "123456",
+        "conpassword": "123456",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "baila",
+        "nom": "wane",
+        "login": "bilo@gmail.com",
+        "password": "bilo1234",
+        "conpassword": "bilo1234",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "gggg",
+        "nom": "gggg",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 182746261
+    },
+    {
+        "prenom": "babs",
+        "nom": "ndiaye",
+        "login": "ndiaye@gmail.com",
+        "password": "ndiaye1",
+        "conpassword": "ndiaye1",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 1889679520
     }
 ]
