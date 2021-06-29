@@ -14,7 +14,8 @@
            }elseif ($_GET['view']=='tableau.bord') {
             require(ROUTE_DIR.'views/admin/tableau.bord.html.php');
            }elseif($_GET['view']=='modification') {
-              $id=$_GET['id'];
+            $_SESSION['id']=$_GET['id'];
+              $id=$_SESSION['id'];
                $question=recuperer_id($id);
             require_once(ROUTE_DIR.'views/admin/creer.question.html.php');
            }
@@ -43,17 +44,35 @@
             }
                
       }elseif ($_POST['action']=='modification') {
-           question($_POST);
-           header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');
-    }
+       
+            if (isset($_POST['btn_submit'])) {
+                  question($_POST);
+                  header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');                 exit();
+            }elseif (isset($_POST['plus'])) {
+              $nbr_pts=$_POST['nbrres'];
+              $_SESSION['nbrres']= $nbr_pts;
+             $type=$_POST['type'];
+             $_SESSION['type']=$type;
+             $quest=$_POST['question'];
+             $_SESSION['question']=$quest;
+             $nbrP=$_POST['point'];
+             $_SESSION['point']=$nbrP;
+             $nbrR=$_POST['nbrres'];
+             $_SESSION['nbrres']=$nbrR;
+            $value=$_SESSION['id'];
+
+              header('location:'.WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$value);
+            }
+          /*  question($_POST);
+           header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question'); */
+    
+}
  }
 }
 
 
  function question(array $data): void{
     $arrayError=array();
-    var_dump($data);
-    die();
     extract($data);
     valid_input($question,'question',$arrayError);
     valid_point($point,'point',$arrayError);
@@ -63,29 +82,11 @@
     if (form_valid($arrayError)){
         if (isset($data['id'])) {
            if (est_admin()) {
-            $arrayReponse=array();
-            for ($i=1; $i <= $data['nbrres'] ; $i++) { 
-            array_push($arrayReponse,$data['reponse'.$i]);
-            }
-            $data['reponse']=$arrayReponse;
-
-            // for ($i=1; $i <= $data['nbrres'] ; $i++) { 
-            //    unset($data['reponse'.$i]);
-            //     }
             modif_question($data);
             header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');
            }
         }
         if (empty($data['id'])) {
-            $arrayReponse=array();
-           for ($i=1; $i <= $data['nbrres'] ; $i++) { 
-            array_push($arrayReponse,$data['reponse'.$i]);
-           }
-           $data['reponse']=$arrayReponse;
-
-        //    for ($i=1; $i <= $data['nbrres'] ; $i++) { 
-        //     unset($data['reponse'.$i]);
-        //      }
             add_question($data);
          header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');
         exit();

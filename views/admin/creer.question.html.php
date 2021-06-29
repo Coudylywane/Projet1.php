@@ -35,7 +35,7 @@ $nbrR=$_SESSION['nbrres'];
     <div class="form-group">
         <div class="d-flex">
         <label for="" class="mt-4">Questions</label>
-        <input type="text" class="form-control inputs mt-4" name="question" id="" aria-describedby="helpId" placeholder="" value="<?= isset($quest)? $quest:'';?>">
+        <input type="text" class="form-control inputs mt-4" name="question" id="" aria-describedby="helpId" placeholder="" value="<?= isset($quest)? $quest:(isset($question['id']) ? $question['question']:"") ;?>">
        </div>
         <small id="helpId" class="form-text text-danger erreur">
           <?php echo isset($arrayError['question']) ? $arrayError['question']: '';?>
@@ -44,7 +44,7 @@ $nbrR=$_SESSION['nbrres'];
       <div class="form-group ">
         <div class="d-flex">
         <label for="">Nbr de Point</label>
-        <input type="number" class="form-control input" name="point" id="" aria-describedby="helpId" placeholder="" value="<?= isset($nbrP)? $nbrP:'';?>">
+        <input type="number" class="form-control input" name="point" id="" aria-describedby="helpId" placeholder="" value="<?= isset($nbrP)? $nbrP : (isset($question['id']) ? $question['point']:'') ;?>">
         </div>
         <small id="helpId" class="form-text text-danger erreur">
               <?php echo isset($arrayError['point']) ? $arrayError['point']: '';?>
@@ -53,10 +53,10 @@ $nbrR=$_SESSION['nbrres'];
       <div class="form-group d-flex">
         <label for="">Type de Reponse</label>
         <select class="form-control inpute" name="type" id="" >
-         <option>Donner le type de la reponse</option>
-          <option value="text" value="<?= isset($question['type'])? $question['type'] :'';?>">Text</option>
-          <option value="radio" value="<?= isset($question['type'])? $question['type'] :'';?>">Simple</option>
-          <option value="checkbox" value="<?= isset($question['type'])? $question['type'] :'';?>">Choix multiple</option>
+         <option value="erreur" >Donner le type de la reponse</option>
+          <option value="text" <?=isset($type)? $type:(isset($question['type']) && $question['type']=='text')? 'selected' :'';?> >Text</option>
+          <option value="radio" <?= isset($type)? $type : (isset($question['type'])&& $question['type']=='radio')? 'selected' :'';?>>Simple</option>
+          <option value="checkbox" <?= isset($type)? $type :(isset($question['type']) && $question['type']=='checkbox')? 'selected' :'';?>>Choix multiple</option>
           <!-- <small id="helpId" class="form-text text-muted">
               <?php //echo isset($arrayError['reponse']) ? $arrayError['reponse']: '';?>
         </small> -->
@@ -66,7 +66,7 @@ $nbrR=$_SESSION['nbrres'];
       <div class="form-group">
         <div class="d-flex">
       <label for="">Nbr de Reponse</label>
-        <input type="number" class="form-control inputes" name="nbrres" id="" aria-describedby="helpId" placeholder="" value="<?= isset($nbrR)? $nbrR :'';?>">
+        <input type="number" class="form-control inputes" name="nbrres" id="" aria-describedby="helpId" placeholder="" value="<?= isset($nbrR)? $nbrR :(isset($question['id']) ? $question['nbrres']:"" );?>">
          <button type="submit"  name="plus" class="btn btn-danger plus">+</button> 
          </div>
          <small id="helpId" class="form-text text-danger erreur">
@@ -75,19 +75,16 @@ $nbrR=$_SESSION['nbrres'];
         </div>
         
         <?php $inputPlus=$_SESSION['nbrres']; ?>
-        <?php for($i=1;$i<=$inputPlus;$i++): ?>
+        <?php for($i=0;$i<$inputPlus;$i++): ?>
           <div class="form-group d-flex">
           <label for="">Reponse<?=$i?></label>
-            <input type="text" class="form-control inpu" name="reponse<?=$i?>" id="" aria-describedby="helpId" placeholder="" value="reponse<?=$i?>">
+            <input type="text" class="form-control inpu" name="reponse[]" id="" aria-describedby="helpId" placeholder="" value="">
             <small id="helpId" class="form-text text-danger">
             </small>
             <?php if($type=='radio') :?>
-              <input type="radio" class="form-control ml-4"  style="width: 3%;" name="bonnereponse" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['radio'])? $question['radio'] :'';?>"> 
-              <?php if(isset($_POST['name'])):?>
-
-              <?php endif ?>
+              <input type="radio" class="form-control ml-4"  style="width: 3%;" name="bonnereponse" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['radio'])? $question['radio'] :'reponse'.$i;?>"> 
               <?php  elseif($type=='checkbox'):?>
-                <input type="checkbox" class="form-control ml-4" style="width: 3%;" name="reponses<?=$i?>" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['checkbox'])? $question['checkbox'] :'';?>"> 
+                <input type="checkbox" class="form-control ml-4" style="width: 3%;" name="bonnereponses<?=$i?>" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['checkbox'])? $question['checkbox'] :'reponse'.$i;?>"> 
             <?php endif ?>
         </div>
           <?php endfor ;

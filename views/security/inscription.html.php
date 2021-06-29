@@ -29,10 +29,11 @@ if (isset($_SESSION['arrayError'])) {
               <p>Pour tester votre niveau de culture general</p>
                 <form action="<?=WEB_ROUTE?>" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="controlleurs" value="security"/>
-                <input type="hidden" name="action" value="inscription"/>
+                <input type="hidden" name="action" value="<?= isset($user['id'])?'edit':'creer.admin';?>"/>
+                <input type="hidden" name="id" value="<?=isset($user['id']) ? $user['id']:"" ;?>"/>
                 <div class="mb-2">
                     <label for="">Prenom</label>
-                    <input type="text" class="form-control " name="prenom" id="" aria-describedby="emailHelpId" placeholder="Aaaaa">
+                    <input type="text" class="form-control " name="prenom" id="" aria-describedby="emailHelpId" placeholder="Aaaaa" value="">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['prenom']) ? $arrayError['prenom']: '';?> 
                     </small>
@@ -91,7 +92,7 @@ if (isset($_SESSION['arrayError'])) {
                 </div>
                   <div class="row">
                     <div class="col-6 mb-2"> 
-                      <button type="submit" name="btn-submit" class="btn btn-danger button">Creer compte</button>
+                      <button type="submit" name="btn-submit" class="btn btn-danger button"><?=isset($user['id'])?'Modifier':'Creer Compte' ?></button>
                     </div>
                     
                   </div>

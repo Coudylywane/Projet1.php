@@ -283,20 +283,54 @@
     },
     {
         "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 2066622407,
-        "question": "lefffff",
+        "action": "modification",
+        "id": "2066622407",
+        "question": "coudy",
         "point": "3",
-        "type": "radio",
-        "nbrres": "3",
-        "reponse1": "ppp",
-        "reponse2": "iii",
-        "reponse3": "lnnn",
-        "btn_submit": "",
+        "type": "checkbox",
+        "nbrres": "4",
         "reponse": [
-            "ppp",
-            "iii",
-            "lnnn"
-        ]
+            "qq",
+            "ss",
+            "rr",
+            "tt"
+        ],
+        "reponses1": "reponse[]",
+        "reponses2": "reponse[]",
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "creer.question",
+        "id": 1101245883,
+        "question": "zzzzzzz",
+        "point": "1",
+        "type": "checkbox",
+        "nbrres": "4",
+        "reponse": [
+            "bb",
+            "cc",
+            "mm",
+            "nn"
+        ],
+        "bonnereponses1": "reponse1",
+        "bonnereponses2": "reponse2",
+        "bonnereponses4": "reponse4",
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "modification",
+        "id": "1306835432",
+        "question": "je suis bb",
+        "point": "3",
+        "type": "checkbox",
+        "nbrres": "2",
+        "reponse": [
+            "HH",
+            "KK"
+        ],
+        "bonnereponses0": "reponse0",
+        "btn_submit": ""
     }
 ]

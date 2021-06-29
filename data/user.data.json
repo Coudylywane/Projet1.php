@@ -99,5 +99,15 @@
         "btn-submit": "",
         "role": "ROLE_ADMIN",
         "id": 1889679520
+    },
+    {
+        "prenom": "imam",
+        "nom": "niass",
+        "login": "niass@gmail.com",
+        "password": "niass123",
+        "conpassword": "niass123",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 1558086151
     }
 ]

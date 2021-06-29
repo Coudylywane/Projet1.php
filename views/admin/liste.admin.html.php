@@ -22,6 +22,7 @@
                     <tr>
                         <th>Prenom</th>
                         <th>Nom</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,8 +32,14 @@
                         <?php if($user['role']=="ROLE_ADMIN"):?>
                         <td><?= $user['prenom'] ?></td>
                         <td><?= $user['nom'] ?></td>
+                       
+                        <td>
+                            <a name="" id="" class="btn btn-danger" href="<?= WEB_ROUTE.'?controlleurs=security&view=edit&id='.$user['id']?>" role="button">Modifier</a>
+                        </td>
                         <?php  endif?>
                     </tr>
+
+                    
                     <?php endforeach ?>
 
                 </tbody>

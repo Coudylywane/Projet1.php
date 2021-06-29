@@ -8,6 +8,11 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
        }elseif($_GET['view']=='deconnexion') {
            deconnexion();
         require(ROUTE_DIR.'views/security/connexion.html.php');
+       }elseif ($_GET['view']=='edit') {
+        $_SESSION['id']=$_GET['id'];
+        $id=$_SESSION['id'];
+         $user=recuperer_id_admin($id);
+         require_once(ROUTE_DIR.'views/security/inscription.html.php');
        }
 
     }else {
@@ -72,7 +77,13 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            
          }
          if (form_valid($arrayError)) {
-            
+            if (isset($data['id'])) {
+                if (est_admin()) {
+    
+                 modif_admin($data);
+                 header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.admin');
+                }
+             }
               $data['role']=est_admin()?'ROLE_ADMIN': 'ROLE_JOUEUR';
               add_user($data);
               if (upload_image($files)) {
