@@ -124,6 +124,30 @@ function valid_type_reponse($valeur,string $key,array &$arrayError){
     }
 }
 
+function nombre_page_total($array, $nombreElement): int {
+    $nombrePage = 0;
+    $longueurArray = count($array);
+    if ($longueurArray % $nombreElement == 0) {
+        $nombrePage = $longueurArray / $nombreElement;
+    } else {
+        $nombrePage = ($longueurArray / $nombreElement) + 1;
+    }
+    return $nombrePage;
+}
+
+function paginer($array, int $page, int $nombreElement): array {
+    $arrayElement = [];
+    $indiceDepart = ($page*$nombreElement) - $nombreElement;
+    $limitElement = $page * $nombreElement;
+for ($i = $indiceDepart; $i < $limitElement; $i++) {
+    if ($i >= count($array)) {
+        return $arrayElement;
+    } else {
+        $arrayElement[] = $array[$i];
+    }
+}
+return $arrayElement;
+}
 
 
 ?>

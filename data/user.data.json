@@ -1,86 +1,5 @@
 [
     {
-        "prenom": "libasse",
-        "nom": "laye",
-        "login": "admin@gmail.com",
-        "password": "admin@1",
-        "role": "ROLE_ADMIN"
-    },
-    {
-        "prenom": "libasse",
-        "nom": "laye",
-        "login": "joueur@gmail.com",
-        "password": "joueur@1",
-        "role": "ROLE_JOUEUR"
-    },
-    {
-        "prenom": "libasse",
-        "nom": "laye",
-        "login": "laye@gmail.com",
-        "password": "1234567",
-        "conpassword": "1234567",
-        "avatar": "",
-        "btn-submit": "",
-        "role": "ROLE_ADMIN"
-    },
-    {
-        "prenom": "bineta",
-        "nom": "wane",
-        "login": "bineta@gmail.com",
-        "password": "12345678",
-        "conpassword": "12345678",
-        "avatar": "tree-736885_1280.jpg",
-        "btn-submit": "",
-        "role": "ROLE_ADMIN"
-    },
-    {
-        "prenom": "yacine",
-        "nom": "diouf",
-        "login": "diouf@gmail.com",
-        "password": "diouf12",
-        "conpassword": "diouf12",
-        "btn-submit": "",
-        "role": "ROLE_JOUEUR"
-    },
-    {
-        "prenom": "aaaa",
-        "nom": "aaaa",
-        "login": "aa@gmail.com",
-        "password": "12345678",
-        "conpassword": "12345678",
-        "btn-submit": "",
-        "role": "ROLE_JOUEUR",
-        "avatar": "valentines-day-624440_1920.jpg"
-    },
-    {
-        "prenom": "aicha",
-        "nom": "wane",
-        "login": "wane@gmail.com",
-        "password": "123456789",
-        "conpassword": "123456789",
-        "btn-submit": "",
-        "role": "ROLE_JOUEUR",
-        "avatar": "tree-736885_1280.jpg"
-    },
-    {
-        "prenom": "slalksqmk",
-        "nom": "wqnnqwd",
-        "login": "qwdd@gmail.com",
-        "password": "123456",
-        "conpassword": "123456",
-        "btn-submit": "",
-        "role": "ROLE_JOUEUR"
-    },
-    {
-        "prenom": "baila",
-        "nom": "wane",
-        "login": "bilo@gmail.com",
-        "password": "bilo1234",
-        "conpassword": "bilo1234",
-        "btn-submit": "",
-        "role": "ROLE_ADMIN"
-    },
-    {
         "prenom": "gggg",
         "nom": "gggg",
         "login": "gg@gmail.com",
@@ -91,6 +10,56 @@
         "id": 182746261
     },
     {
+        "prenom": "gggg",
+        "nom": "gggg",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18274699261
+    },
+    {
+        "prenom": "jjjjjjjjj",
+        "nom": "gggg",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 182846261
+    },
+    {
+        "prenom": "nnnnnnnnnnnn",
+        "nom": "nnn",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 182764628961
+    },
+    {
+        "prenom": "ooooooo",
+        "nom": "ggoooogg",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18274886261
+    },
+    {
+        "prenom": "kjkjhgfd",
+        "nom": "hhj",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18890746261
+    },
+    {
         "prenom": "babs",
         "nom": "ndiaye",
         "login": "ndiaye@gmail.com",
@@ -98,16 +67,179 @@
         "conpassword": "ndiaye1",
         "btn-submit": "",
         "role": "ROLE_ADMIN",
-        "id": 1889679520
+        "id": 18908679520
     },
     {
-        "prenom": "imam",
+        "id": "1558086151",
+        "prenom": "imam hassan",
         "nom": "niass",
         "login": "niass@gmail.com",
         "password": "niass123",
         "conpassword": "niass123",
         "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": 59331881,
+        "prenom": "ma",
+        "nom": "bineta",
+        "login": "ma@gmail.com",
+        "password": "ma12345",
+        "conpassword": "ma12345",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "1370994221",
+        "prenom": "libasse",
+        "nom": "mbaye",
+        "login": "mbaye1@gmail.com",
+        "password": "mbaye123",
+        "conpassword": "mbaye123",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "test1",
+        "nom": "test2",
+        "login": "admin@gmail.com",
+        "password": "admin@1",
+        "conpassword": "admin@1",
+        "btn-submit": "",
         "role": "ROLE_ADMIN",
-        "id": 1558086151
+        "id": 277797141
+    },
+    {
+        "prenom": "test1",
+        "nom": "test2",
+        "login": "admin@gmail.com",
+        "password": "admin@1",
+        "conpassword": "admin@1",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 277797141
+    },
+    {
+        "prenom": "test1",
+        "nom": "test2",
+        "login": "admin@gmail.com",
+        "password": "admin@1",
+        "conpassword": "admin@1",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 277797141
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "Coudy ly",
+        "nom": "wane",
+        "login": "lywanecoudy@gmail.com",
+        "password": "coudyly03@",
+        "conpassword": "coudyly03@",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 906289932
+    },
+    {
+        "prenom": "kjkjhgfd",
+        "nom": "hhj",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18890746261
+    },
+    {
+        "prenom": "kjkjhgfd",
+        "nom": "hhj",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18890746261
+    },
+    {
+        "prenom": "kjkjhgfd",
+        "nom": "hhj",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18890746261
+    },
+    {
+        "prenom": "kjkjhgfd",
+        "nom": "hhj",
+        "login": "gg@gmail.com",
+        "password": "ggggggg",
+        "conpassword": "ggggggg",
+        "btn-submit": "",
+        "role": "ROLE_ADMIN",
+        "id": 18890746261
     }
+
+
+
 ]

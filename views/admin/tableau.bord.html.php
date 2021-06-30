@@ -15,14 +15,52 @@
         </div>
         <div class="container border border-danger rounded  bord">
        
-        <div class="pourc">
-            <label for="file">Pourcentage du nombre de jour:</label>
-            <progress class="file" max="100" value="50"></progress>
-            <label for="file">Pourcentage du nombre d'admin:</label>
-            <progress class="file" max="100" value="10"></progress>
-            <label for="file">Pourcentage du nombre de question:</label>
-            <progress class="file"  max="100" value="70"></progress>
+       <?php
+        $arrayUser=find_all_users();
+        $cpta=$cptj=0;
+        foreach ($arrayUser as $key => $value) {
+           if ($value['role']=='ROLE_ADMIN') {
+             $cpta++;
+           }elseif ($value['role']=='ROLE_JOUEUR') {
+            $cptj++;
+           }
+       }
+       $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+       $arrayUser1= json_decode($json,true);
+        $cptq=0;
+       foreach ($arrayUser1 as $key => $val) {
+           $cptq++;
+       }
+
+
+        ?>
+        
+        <div class="progress mt-4 mr-5">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"  aria-valuenow="<?=$cptj ?>" aria-valuemin="0" aria-valuemax="100"  value="<?=$cptj ?>">
+            <?=$cptj ?>
+            </div>
         </div>
+        <label for="file" >Pourcentage du nombre de joueur</label>
+        <div class="progress mt-4 mr-5">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"  aria-valuenow="<?=$cpta?>" aria-valuemin="0" aria-valuemax="100"  value="<?=$cpta?>">
+            <?=$cpta?>
+            </div>
+        </div>
+        <label for="file">Pourcentage du nombre d'admin</label>
+        <div class="progress mt-4 mr-5">
+            <div class="progress-bar progress-bar-striped  bg-danger" role="progressbar"  aria-valuenow="<?=$cptq?>" aria-valuemin="0" aria-valuemax="100"   value="<?=$cptq?>">
+            <?=$cptq?>
+            </div>
+        </div>
+        <label for="file">Pourcentage du nombre de question</label>
+        <!-- <div class="pourc">
+            <label for="file">Pourcentage du nombre de joueur:</label>
+            <progress class="file" max="100" value="<?=$cptj ?>"></progress>
+            <label for="file">Pourcentage du nombre d'admin:</label>
+            <progress class="file" max="100" value="<?=$cpta?>"></progress>
+            <label for="file">Pourcentage du nombre de question:</label>
+            <progress class="file"  max="100" value="<?=$cptq?>"></progress>
+        </div> -->
         </div>
     </div>
    

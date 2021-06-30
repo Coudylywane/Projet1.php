@@ -29,25 +29,25 @@ if (isset($_SESSION['arrayError'])) {
               <p>Pour tester votre niveau de culture general</p>
                 <form action="<?=WEB_ROUTE?>" method="POST"  enctype="multipart/form-data">
                 <input type="hidden" name="controlleurs" value="security"/>
-                <input type="hidden" name="action" value="<?= isset($user['id'])?'edit':'creer.admin';?>"/>
+                <input type="hidden" name="action" value="<?= isset($user['id'])?'edit':'inscription';?>"/>
                 <input type="hidden" name="id" value="<?=isset($user['id']) ? $user['id']:"" ;?>"/>
                 <div class="mb-2">
                     <label for="">Prenom</label>
-                    <input type="text" class="form-control " name="prenom" id="" aria-describedby="emailHelpId" placeholder="Aaaaa" value="">
+                    <input type="text" class="form-control " name="prenom" id="" aria-describedby="emailHelpId" placeholder="Aaaaa" value="<?= isset($user['prenom'])?$user['prenom']:''?>">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['prenom']) ? $arrayError['prenom']: '';?> 
                     </small>
                 </div>
                 <div class="mb-2">
                     <label for="">Nom</label>
-                    <input type="text" class="form-control " name="nom" id="" aria-describedby="emailHelpId" placeholder="BBBB">
+                    <input type="text" class="form-control " name="nom" id="" aria-describedby="emailHelpId" placeholder="BBBB"  value="<?= isset($user['nom'])?$user['nom']:''?>">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['nom']) ? $arrayError['nom']: '';?>
                     </small>
                 </div>
                 <div class="mb-2">
                     <label for="">Login</label>
-                    <input type="text" class="form-control " name="login" id="" aria-describedby="emailHelpId" placeholder="aabaa">
+                    <input type="text" class="form-control " name="login" id="" aria-describedby="emailHelpId" placeholder="aabaa"  value="<?= isset($user['login'])?$user['login']:''?>">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['login']) ? $arrayError['login']: '';?>
                     </small>
@@ -56,7 +56,7 @@ if (isset($_SESSION['arrayError'])) {
                   <div class="col-6">
                   <div class="mb-2">
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control mot-de-pass" placeholder=".....">
+                    <input type="password" name="password" class="form-control mot-de-pass" placeholder="....."  value="<?= isset($user['password'])?$user['password']:''?>">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['password']) ? $arrayError['password']: '';?>
                     </small>
@@ -65,7 +65,7 @@ if (isset($_SESSION['arrayError'])) {
                 <div class="col-6">
                 <div class="">
                     <label for="password">Confirm Password</label>
-                    <input type="password" name="conpassword" class="form-control mot-de-pass" placeholder=".....">
+                    <input type="password" name="conpassword" class="form-control mot-de-pass" placeholder="....."  value="<?= isset($user['conpassword'])?$user['conpassword']:''?>">
                     <small class="form-text text-danger">
                     <?php echo isset($arrayError['conpassword']) ? $arrayError['conpassword']: '';?>
                     </small>

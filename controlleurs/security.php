@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            deconnexion();
         require(ROUTE_DIR.'views/security/connexion.html.php');
        }elseif ($_GET['view']=='edit') {
-        $_SESSION['id']=$_GET['id'];
-        $id=$_SESSION['id'];
+        $id = $_GET['id'];
+        /* $id=$_SESSION['id']; */
          $user=recuperer_id_admin($id);
          require_once(ROUTE_DIR.'views/security/inscription.html.php');
        }
@@ -27,8 +27,18 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            unset($_POST['controlleurs']);
            unset($_POST['action']);
         inscription($_POST, $_FILES);
+        
         }elseif ($_POST['action']=='creer.question') {
          question($_POST);
+         }elseif ($_POST['action']=='edit') {
+            unset($_POST['valider']);
+            unset($_POST['controlleurs']);
+            unset($_POST['action']);
+            
+         inscription($_POST,$_FILES);
+         
+         header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.admin');
+        
          }
     }
 }
@@ -59,10 +69,14 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
      }
 
     function inscription( array $data, array $files):void{
+       
         $arrayError=array();
+        
         extract($data);
          validation_login($login,'login',$arrayError);
-         if (login_exist($login)) {
+        
+         if (login_exist($login)&& !isset($data['id'])) {
+           
            $arrayError['login']="Ce login existe deja ";
            $_SESSION['arrayError']=$arrayError;
            header('location:'.WEB_ROUTE.'?controlleurs=security&view=inscription');
@@ -77,27 +91,34 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
            
          }
          if (form_valid($arrayError)) {
+           
+            // if (upload_image($files)) {
+            //     $data['avatar']=$files['avatar']['name'];
+               
+                
+            //      header('location:'.WEB_ROUTE.'?controlleurs=security&view=connexion');
+            //      exit();
+            //   }else {
+            //     $arrayError['avatar']="Erreur de telechargement ";
+            //     $_SESSION['arrayError']=$arrayError;
+            //     header('location:'.WEB_ROUTE.'?controlleurs=security&view=inscription');
+            //     exit();
+            //   }
+            $data['role']=est_admin()?'ROLE_ADMIN': 'ROLE_JOUEUR';
             if (isset($data['id'])) {
+
                 if (est_admin()) {
     
                  modif_admin($data);
+               
                  header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.admin');
                 }
              }
-              $data['role']=est_admin()?'ROLE_ADMIN': 'ROLE_JOUEUR';
-              add_user($data);
-              if (upload_image($files)) {
-                $data['avatar']=$files['avatar']['name'];
-               
-                
-                 header('location:'.WEB_ROUTE.'?controlleurs=security&view=connexion');
-                 exit();
-              }else {
-                $arrayError['avatar']="Erreur de telechargement ";
-                $_SESSION['arrayError']=$arrayError;
-                header('location:'.WEB_ROUTE.'?controlleurs=security&view=inscription');
-                exit();
+              if (empty($data['id'])) {
+                add_user($data);
+                header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.admin');
               }
+            
                 
               
            

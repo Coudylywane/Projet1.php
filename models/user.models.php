@@ -41,43 +41,45 @@ function login_exist(string $login):array{
   return [];
 }
 
-
-
-
-
 function recuperer_id(string $id){
-   // 1 lire contenu du fichier 
-   $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
-   // 2 convertir le json en tableau
-   $arrayQuestion= json_decode($json,true);
-   foreach($arrayQuestion as $question){
-       if ($question['id']==$id ) {
-         return $question;
-       }
-   }
-   return [];
+  // 1 lire contenu du fichier 
+  $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+  // 2 convertir le json en tableau
+  $arrayQuestion= json_decode($json,true);
+  foreach($arrayQuestion as $question){
+      if ($question['id']==$id ) {
+        return $question;
+      }
+  }
+  return [];
 }
 
 
-function modif_admin(array $newAdmin){
+
+
+
+
+function modif_admin(array $newUser){
+
   // 1 lire contenu du fichier 
-  $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+  $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
     // 2 convertir le json en tableau
-  $arrayAdmin= json_decode($json,true);
-  foreach($arrayAdmin as $key => $oldAdmin){
-     if ($oldAdmin['id']==$newAdmin['id']) {
-       $arrayAdmin[$key]=$newAdmin;
+  $arrayUser= json_decode($json,true);
+  foreach($arrayUser as $key => $oldUser){
+     if ($oldUser['id']==$newUser['id']) {
+       $arrayUser[$key]=$newUser;
    }
   }
-  $json = json_encode($arrayAdmin);
-  file_put_contents(FILE_USER , $json);
+  
+  $json = json_encode($arrayUser);
+  file_put_contents(FILE_USERS , $json);
   
   }
   
   
   function recuperer_id_admin(string $id){
       // 1 lire contenu du fichier 
-      $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+      $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
       // 2 convertir le json en tableau
       $arrayAdmin= json_decode($json,true);
       foreach($arrayAdmin as $admin){
@@ -87,6 +89,8 @@ function modif_admin(array $newAdmin){
       }
       return [];
    }
+
+  
   
 
 ?>

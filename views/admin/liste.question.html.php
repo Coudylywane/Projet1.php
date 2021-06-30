@@ -17,9 +17,11 @@
     <?php 
        $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
        $arrayUser1= json_decode($json,true);
+       
        foreach ($arrayUser1 as $key => $question):?>
                 <tr>
                  <td><?= $question['question']?><br>
+                
                 <?php if ($question['type']=='radio'): ?>
                     <?php foreach($question['reponse'] as $reponse) :?>
                         <input type="radio" name="coudy"><?= $reponse ?><br>
@@ -38,7 +40,7 @@
         <?php endif ?>
         <td> 
         <a name="" id="" class="btn btn-danger" href="<?= WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$question['id']?>" role="button">Modifier</a>
-        <a name="" id="" class="btn btn-info" href="#" role="button">Supprimer</a>
+        <a name="" id="" class="btn btn-info" href="<?= WEB_ROUTE.'?controlleurs=admin&view=supprimer&id='.$supprimer['id']?>"" role="button">Supprimer</a>
         </td>
         </tr>
        

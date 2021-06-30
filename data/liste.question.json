@@ -1,336 +1,49 @@
 [
     {
-        "controlleurs": "security",
-        "action": "creer.question",
-        "question": "rtyopkjhfg",
-        "point": "4",
-        "type": "text",
-        "nbrres": "3",
-        "btn_submit": "",
-        "role": "ROLE_ADMIN",
-        "id": 1030818511
-    },
-    {
-        "controlleurs": "security",
-        "action": "creer.question",
-        "question": "hgggggggggggggggggl",
-        "point": "3",
-        "type": "checkbox",
-        "nbrres": "3",
-        "btn_submit": "",
-        "role": "ROLE_ADMIN",
-        "id": 2063825371
-    },
-    {
-        "controlleurs": "admin",
-        "action": "modification",
-        "id": 83810416,
-        "question": "rtyopkjhfg",
-        "point": "4",
-        "type": "text",
-        "nbrres": "3",
-        "btn_submit": ""
-    },
-    {
         "controlleurs": "admin",
         "action": "creer.question",
-        "id": 1656483442,
-        "question": "je suis normal et rouge",
-        "point": "2",
-        "type": "checkbox",
-        "nbrres": "1",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 704982144,
-        "question": "ertyui",
-        "point": "3",
-        "type": "radio",
-        "nbrres": "2",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1664474669,
-        "question": "1.Quelle est la couleur du ciel",
-        "point": "2",
-        "type": "radio",
-        "nbrres": "2",
-        "reponse1": "ROUGE",
-        "reponse2": "BLEU",
-        "repone_radio": "",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "modification",
-        "id": "1123407310",
-        "question": "2.Qui est le meilleur joueur?",
-        "point": "3",
-        "type": "radio",
-        "nbrres": "2",
-        "plus": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 683414004,
-        "question": "1.Quelle est la couleur du cie",
-        "point": "6",
-        "type": "checkbox",
-        "nbrres": "4",
-        "reponse1": "erty",
-        "reponse2": "vvvv",
-        "reponse3": "nnnn",
-        "reponse4": "ttttt",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 902176455,
-        "question": "ddddddddddddd",
-        "point": "3",
-        "type": "radio",
-        "nbrres": "3",
-        "reponse1": "aaa",
-        "reponse2": "",
-        "reponse3": "bbb",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1120117715,
-        "question": "ttttttttttt",
-        "point": "4",
-        "type": "checkbox",
-        "nbrres": "5",
-        "reponse1": "rrrr",
-        "reponse2": "ttttt",
-        "reponse3": "iiii",
-        "reponse4": "oooo",
-        "reponse5": "llll",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 958616038,
-        "question": "wwww",
-        "point": "2",
-        "type": "radio",
-        "nbrres": "2",
-        "reponse1": "ff",
-        "reponse2": "qq",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1299324774,
-        "question": "rrrr",
-        "point": "5",
-        "type": "checkbox",
-        "nbrres": "2",
-        "reponse1": "uuu",
-        "reponse2": "iii",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 413641279,
-        "question": "bbbbbb",
-        "point": "3",
-        "type": "radio",
-        "nbrres": "2",
-        "reponse1": "nnn",
-        "reponse2": "mmm",
-        "btn_submit": "",
-        "reponse": [
-            "nnn",
-            "mmm"
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 557650627,
-        "question": "gggggggg",
-        "point": "4",
-        "type": "checkbox",
-        "nbrres": "5",
-        "reponse1": "ee",
-        "reponse2": "yy",
-        "reponse3": "uu",
-        "reponse4": "ii",
-        "reponse5": "oo",
-        "btn_submit": "",
-        "reponse": [
-            "ee",
-            "yy",
-            "uu",
-            "ii",
-            "oo"
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 257542498,
-        "question": "jjj",
-        "point": "3",
-        "type": "text",
-        "nbrres": "3",
-        "reponse1": "hh",
-        "reponse2": "jjj",
-        "reponse3": "kkk",
-        "btn_submit": "",
-        "reponse": [
-            "hh",
-            "jjj",
-            "kkk"
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1468440741,
-        "question": "hh",
-        "point": "3",
-        "type": "checkbox",
-        "nbrres": "3",
-        "reponse1": "u",
-        "reponse2": "uu",
-        "reponse3": "uuu",
-        "btn_submit": "",
-        "reponse": [
-            "u",
-            "uu",
-            "uuu"
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 522624232,
-        "question": "www ",
-        "point": "3",
-        "type": "checkbox",
-        "nbrres": "3",
-        "reponse1": "aa",
-        "reponse2": "aaaaa",
-        "reponse3": "aaaaaaaaaaaa",
-        "btn_submit": "",
-        "reponse": [
-            "aa",
-            "aaaaa",
-            "aaaaaaaaaaaa"
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 247321045,
-        "question": "ggggg",
-        "point": "4",
-        "type": "radio",
-        "nbrres": "4",
-        "reponse1": "tttt",
-        "reponse": [
-            "tttt",
-            "iii",
-            "ppp",
-            "lll"
-        ],
-        "reponse2": "iii",
-        "reponse3": "ppp",
-        "reponse4": "lll",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1910253607,
-        "question": "llllllll",
-        "point": "4",
-        "type": "radio",
-        "nbrres": "3",
-        "btn_submit": "",
-        "reponse": [
-            null,
-            null,
-            null
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 270576698,
-        "question": "yaaaaaaaaaaa",
-        "point": "5",
-        "type": "radio",
-        "nbrres": "2",
-        "btn_submit": "",
-        "reponse": [
-            null,
-            null
-        ]
-    },
-    {
-        "controlleurs": "admin",
-        "action": "modification",
-        "id": "2066622407",
-        "question": "coudy",
-        "point": "3",
-        "type": "checkbox",
-        "nbrres": "4",
-        "reponse": [
-            "qq",
-            "ss",
-            "rr",
-            "tt"
-        ],
-        "reponses1": "reponse[]",
-        "reponses2": "reponse[]",
-        "btn_submit": ""
-    },
-    {
-        "controlleurs": "admin",
-        "action": "creer.question",
-        "id": 1101245883,
-        "question": "zzzzzzz",
+        "id": 1769965468,
+        "question": "bbsbbsb",
         "point": "1",
-        "type": "checkbox",
-        "nbrres": "4",
+        "type": "text",
+        "nbrres": "1",
         "reponse": [
-            "bb",
-            "cc",
-            "mm",
-            "nn"
+            "nddddddddjm"
         ],
-        "bonnereponses1": "reponse1",
-        "bonnereponses2": "reponse2",
-        "bonnereponses4": "reponse4",
         "btn_submit": ""
     },
     {
         "controlleurs": "admin",
         "action": "modification",
-        "id": "1306835432",
-        "question": "je suis bb",
+        "id": "2012953918",
+        "question": "1.Je suis normal ",
         "point": "3",
         "type": "checkbox",
-        "nbrres": "2",
+        "nbrres": "4",
         "reponse": [
-            "HH",
-            "KK"
+            "oui",
+            "non",
+            "j'en sais rien ",
+            "peut etre"
         ],
-        "bonnereponses0": "reponse0",
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "modification",
+        "id": "1428328889",
+        "question": "je suis normal et rouge",
+        "point": "3",
+        "type": "checkbox",
+        "nbrres": "4",
+        "reponse": [
+            "nn",
+            "ooooo",
+            "ppppp",
+            "aaaa"
+        ],
+        "bonnereponses3": "reponse3",
         "btn_submit": ""
     }
+
 ]

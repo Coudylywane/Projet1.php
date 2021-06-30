@@ -18,6 +18,13 @@
               $id=$_SESSION['id'];
                $question=recuperer_id($id);
             require_once(ROUTE_DIR.'views/admin/creer.question.html.php');
+           }elseif ($_GET['view']=='supprimer') {
+            $_SESSION['id']=$_GET['id'];
+              $id=$_SESSION['id'];
+               $supprimer=recuperer_id($id);
+            require_once(ROUTE_DIR.'views/admin/confirmation.html.php');
+           }elseif ($_GET['view']=='confirmation') {
+            require(ROUTE_DIR.'views/admin/confirmation.html.php');
            }
      }else {
          require_once(ROUTE_DIR.'views/security/connexion.html.php');
