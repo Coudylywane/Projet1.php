@@ -1,0 +1,20 @@
+.bg-primary{
+    height: 100px;
+    }
+    
+    .bg-success{
+        height: 50px;
+    }
+    
+    .bg-warning{
+        height: 506px;
+        width: 848px;
+    }
+    
+    .cont{
+        margin-left: -1%;
+    }
+    
+    .suivant{
+        margin-left: 68%;
+    }

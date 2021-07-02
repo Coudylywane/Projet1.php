@@ -60,7 +60,7 @@
 <style>
     .profile{
         height: 130px;
-        width: 350px;
+        width: 310px;
     }
     .image{
      float: left;
@@ -80,5 +80,12 @@ nav{
 }
 .nav-item a:hover{
     background-color: #ddd;
+}
+
+    
+.suivant {
+    margin-left: 73%;
+    margin-top: -5px;
+
 }
 </style>

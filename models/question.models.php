@@ -2,20 +2,19 @@
 
 
 function add_question(array $question){
-  $json=file_get_contents(FILE_USER);
   $question['id']=rand();
-  $arrayQuestion= json_decode($json,true);
+  $arrayQuestion= find_all_questions();
   $arrayQuestion[]=$question;
   //convertir le tableau en json
   $json = json_encode($arrayQuestion);
-  file_put_contents(FILE_USER , $json);
+  file_put_contents(FILE_QUESTIONS , $json);
 }
  
 
 function modif_question(array $newQuest){
     
   // 1 lire contenu du fichier 
-  $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+  $json=file_get_contents(FILE_QUESTIONS);
   
   // 2 convertir le json en tableau
   $arrayQuestion= json_decode($json,true);
@@ -27,7 +26,7 @@ function modif_question(array $newQuest){
 
   }
   $json = json_encode($arrayQuestion);
-  file_put_contents(FILE_USER , $json);
+  file_put_contents(FILE_QUESTIONS , $json);
 
 }    
 
@@ -46,9 +45,16 @@ function supprimer_question(string $id):bool{
             $tab[]=$user;
           }
    }
-   $json = json_encode($arrayQuestion);
-   file_put_contents(FILE_USER , $json); 
+   $json = json_encode($tab);
+   file_put_contents(FILE_QUESTIONS, $json); 
    return $ok;
+
+}
+
+function find_all_questions(){
+  $json =file_get_contents(FILE_QUESTIONS);
+  // 2 convertir le json en tableau
+  return json_decode($json,true);
 
 }
 

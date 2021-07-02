@@ -4,12 +4,16 @@
  if ($_SERVER['REQUEST_METHOD']=='GET') {
      if (isset($_GET['view'])) {
         if ($_GET['view']=='liste.question') {
+          extract(pagination(find_all_questions(),$_GET['page']));
             require(ROUTE_DIR.'views/admin/liste.question.html.php');
            }elseif ($_GET['view']=='creer.question') {
             require(ROUTE_DIR.'views/admin/creer.question.html.php');
            }elseif ($_GET['view']=='liste.admin') {
-            require(ROUTE_DIR.'views/admin/liste.admin.html.php');
+           extract(pagination(find_all_admins(),$_GET['page']));
+  
+           require(ROUTE_DIR.'views/admin/liste.admin.html.php');
            }elseif ($_GET['view']=='liste.joueur') {
+            extract(pagination(find_all_joueurs(),$_GET['page']));
             require(ROUTE_DIR.'views/admin/liste.joueur.html.php');
            }elseif ($_GET['view']=='tableau.bord') {
             require(ROUTE_DIR.'views/admin/tableau.bord.html.php');
@@ -20,11 +24,15 @@
             require_once(ROUTE_DIR.'views/admin/creer.question.html.php');
            }elseif ($_GET['view']=='supprimer') {
             $_SESSION['id']=$_GET['id'];
-              $id=$_SESSION['id'];
-               $supprimer=recuperer_id($id);
+            $id=$_SESSION['id'];
+              $question=recuperer_id($id);
             require_once(ROUTE_DIR.'views/admin/confirmation.html.php');
-           }elseif ($_GET['view']=='confirmation') {
-            require(ROUTE_DIR.'views/admin/confirmation.html.php');
+           }elseif ($_GET['view']=='confirme') {
+              $_SESSION['id']=$_GET['id'];
+              $id = $_SESSION['id'];
+              $question=recuperer_id($id);
+               $ok = supprimer_question($id);
+            require(ROUTE_DIR.'views/admin/liste.question.html.php');
            }
      }else {
          require_once(ROUTE_DIR.'views/security/connexion.html.php');
@@ -58,15 +66,15 @@
             }elseif (isset($_POST['plus'])) {
               $nbr_pts=$_POST['nbrres'];
               $_SESSION['nbrres']= $nbr_pts;
-             $type=$_POST['type'];
-             $_SESSION['type']=$type;
-             $quest=$_POST['question'];
-             $_SESSION['question']=$quest;
-             $nbrP=$_POST['point'];
-             $_SESSION['point']=$nbrP;
-             $nbrR=$_POST['nbrres'];
-             $_SESSION['nbrres']=$nbrR;
-            $value=$_SESSION['id'];
+              $type=$_POST['type'];
+              $_SESSION['type']=$type;
+              $quest=$_POST['question'];
+              $_SESSION['question']=$quest;
+              $nbrP=$_POST['point'];
+              $_SESSION['point']=$nbrP;
+              $nbrR = $_POST['nbrres'];
+              $_SESSION['nbrres'] = $nbrR;
+              $value=$_SESSION['id'];
 
               header('location:'.WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$value);
             }
@@ -104,6 +112,46 @@
         $_SESSION['arrayError']=$arrayError;
         header('location:'.WEB_ROUTE.'?controlleurs=admin&view=creer.question');
     }
+}
+
+function pagination($data,$position){
+  
+  $nbrPage =0;
+  $page=1;
+  $suivant=2;
+  $nbrElement = NOMBRE_PAR_PAGE;
+ $precednt=0;
+
+
+
+if (!isset($position)) {
+  $page=1;
+   $_SESSION['user_admin'] =  $data;
+   $nbrPage = nombre_page_total( $_SESSION['user_admin'], NOMBRE_PAR_PAGE);
+   $list_user= paginer( $_SESSION['user_admin'],$page, NOMBRE_PAR_PAGE);
+ 
+}
+
+  if (isset($position)) {
+      $page=$position;
+   $suivant=$page+1;
+   $precednt=$page-1;
+       if (isset($_SESSION['user_admin'])) {
+           $_SESSION['user_admin'] =  $data;
+           $nbrPage = nombre_page_total( $_SESSION['user_admin'], NOMBRE_PAR_PAGE);
+           $list_user= paginer( $_SESSION['user_admin'],$page, NOMBRE_PAR_PAGE);
+          }
+
+   }
+   return[
+
+     'precednt'=> $precednt,
+     'suivant'=>$suivant,
+     'nbrPage'=>$nbrPage,
+     'data'=>$list_user,
+  
+  ];
+
 }
 
 

@@ -1,7 +1,10 @@
 <div class="barre">
 
 <div class="d-flex flex-row bd-highlight ">
-  <div class="p-2 bd-highlight"><h4 class="slogan">CREER ET PARAMETRER VOS QUIZZ</h4></div>
+  <div class="p-2 bd-highlight">
+        <h3 class="ml-5">BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h3>
+        <h4 class="text-center ml-5">JOUER TESTER VOTRE NIVEAU DE CULTURE GENERALE</h4>
+  </div>
   
 </div>
 <div class="d-flex flex-row-reverse bd-highlight">

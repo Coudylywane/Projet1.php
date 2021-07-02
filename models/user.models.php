@@ -60,7 +60,6 @@ function recuperer_id(string $id){
 
 
 function modif_admin(array $newUser){
-
   // 1 lire contenu du fichier 
   $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
     // 2 convertir le json en tableau
@@ -88,6 +87,28 @@ function modif_admin(array $newUser){
           }
       }
       return [];
+   }
+
+   function find_all_admins(){
+    $arrayUser=find_all_users();
+    foreach ($arrayUser as $user) {
+      if ($user['role']=='ROLE_ADMIN') {
+          $admin_user[]=$user;
+      }
+     
+  }
+  return  $admin_user;
+   }
+
+   function find_all_joueurs(){
+    $arrayUser=find_all_users();
+    foreach ($arrayUser as $user) {
+      if ($user['role']=='ROLE_JOUEUR') {
+          $admin_user[]=$user;
+      }
+     
+      }
+      return  $admin_user;
    }
 
   

@@ -35,7 +35,8 @@ $nbrR=$_SESSION['nbrres'];
     <div class="form-group">
         <div class="d-flex">
         <label for="" class="mt-4">Questions</label>
-        <input type="text" class="form-control inputs mt-4" name="question" id="" aria-describedby="helpId" placeholder="" value="<?= isset($quest)? $quest:(isset($question['id']) ? $question['question']:"") ;?>">
+        <input type="text" class="form-control inputs mt-4" name="question" id="" aria-describedby="helpId" placeholder="" 
+        value="<?= isset($quest)? $quest:(isset($question['id']) ? $question['question']:"") ;?>">
        </div>
         <small id="helpId" class="form-text text-danger erreur">
           <?php echo isset($arrayError['question']) ? $arrayError['question']: '';?>
@@ -44,7 +45,8 @@ $nbrR=$_SESSION['nbrres'];
       <div class="form-group ">
         <div class="d-flex">
         <label for="">Nbr de Point</label>
-        <input type="number" class="form-control input" name="point" id="" aria-describedby="helpId" placeholder="" value="<?= isset($nbrP)? $nbrP : (isset($question['id']) ? $question['point']:'') ;?>">
+        <input type="number" class="form-control input" name="point" id="" aria-describedby="helpId" placeholder="" 
+        value="<?= isset($nbrP)? $nbrP : (isset($question['id']) ? $question['point']:'') ;?>">
         </div>
         <small id="helpId" class="form-text text-danger erreur">
               <?php echo isset($arrayError['point']) ? $arrayError['point']: '';?>
@@ -56,7 +58,7 @@ $nbrR=$_SESSION['nbrres'];
          <option value="erreur" >Donner le type de la reponse</option>
           <option value="text" <?=isset($type)? $type:(isset($question['type']) && $question['type']=='text')? 'selected' :'';?> >Text</option>
           <option value="radio" <?= isset($type)? $type : (isset($question['type'])&& $question['type']=='radio')? 'selected' :'';?>>Simple</option>
-          <option value="checkbox" <?= isset($type)? $type :(isset($question['type']) && $question['type']=='checkbox')? 'selected' :'';?>>Choix multiple</option>
+          <option value="checkbox" <?= isset($type)? $type :isset($question['type']) && $question['type']=='checkbox'? 'selected' :'';?>>Choix multiple</option>
           <!-- <small id="helpId" class="form-text text-muted">
               <?php //echo isset($arrayError['reponse']) ? $arrayError['reponse']: '';?>
         </small> -->

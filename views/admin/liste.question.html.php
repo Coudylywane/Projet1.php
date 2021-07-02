@@ -15,10 +15,8 @@
         <p class="text-center logan">NOMBRE DE QUESTIONS PAR JOUEUR</p> 
     <table class="table">
     <?php 
-       $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
-       $arrayUser1= json_decode($json,true);
        
-       foreach ($arrayUser1 as $key => $question):?>
+       foreach ($data as $key => $question):?>
                 <tr>
                  <td><?= $question['question']?><br>
                 
@@ -40,16 +38,23 @@
         <?php endif ?>
         <td> 
         <a name="" id="" class="btn btn-danger" href="<?= WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$question['id']?>" role="button">Modifier</a>
-        <a name="" id="" class="btn btn-info" href="<?= WEB_ROUTE.'?controlleurs=admin&view=supprimer&id='.$supprimer['id']?>"" role="button">Supprimer</a>
+        <a name="" id="" class="btn btn-info" href="<?= WEB_ROUTE.'?controlleurs=admin&view=supprimer&id='.$question['id']?>" role="button">Supprimer</a>
         </td>
         </tr>
        
         <?php endforeach ?>
     </table>
-    <div class="form-group">
-        <button type="submit" name="btn_submit" class="btn bg-danger btn-md text-white mt-3 btns" value="btn_connexion">Suivant</button>
-    </div>
 </div>
+<?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+                <a name="" id="" class="btn btn-danger disabled  mt-2 " href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.question&page='.$precednt;  ?>" role="button">Precedent</a> 
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger  mt-2  " href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.question&page='.$precednt;  ?>" role="button">Precedent</a> 
+                 <?php endif ?>
+                 <?php if($_GET['page'] > $nbrPage-1): ?>
+                <a name="" id="" class="btn btn-danger disabled  mt-2 suivant" href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.question&page='.$suivant; ?>" role="button">Suivant</a>
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger  mt-2 suivant" href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.question&page='.$suivant; ?>" role="button">Suivant</a>
+                 <?php endif ?>
 </div>
 
 
