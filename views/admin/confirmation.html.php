@@ -1,13 +1,8 @@
 <?php require_once(ROUTE_DIR.'views/inc/header.html.php');
 require_once(ROUTE_DIR.'views/inc/menu1.html.php');
- require_once(ROUTE_DIR.'views/inc/footer.html.php')
- 
- 
- ?>
-
-
-<div class="container">
-    <div>
+?>
+<div class="container ml-2">
+<div>
       <h1 class="confirm mt-4 text-center">Page de Confirmation</h1>
     </div>
     <div class="column">
@@ -16,38 +11,25 @@ require_once(ROUTE_DIR.'views/inc/menu1.html.php');
             <h3>Voulais-vous vraiment supprimer cette question</h3>
         </div>
         <div class="mt-3 ml-auto mr-auto">        
-            <a name="" id="" class="btn btn1" href="<?= WEB_ROUTE.'?controlleurs=admin&view=confirme&id='.$question['id']?>" role="button">OUI</a>
-        <a name="" id="" class="btn btn-info ml-5" href="<?= WEB_ROUTE.'?controlleurs=admin&view=liste.question'?>" role="button">NON</a>
+            
+        <a name="" id="" class="btn btn-info" href="<?= WEB_ROUTE.'?controlleurs=admin&view=liste.question'?>" role="button">NON</a>
+        <a name="" id="" class="btn btn1  ml-5" href="<?= WEB_ROUTE.'?controlleurs=admin&view=confirme&id='.$question['id']?>" role="button">OUI</a>
         </div>
 
         </div>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
 
 <style>
-    .confirm{
+    .container {
+    margin-top: 1%;
+    margin-left: 0%;
+}
+
+.confirm{
         color:#fff;
-        height: 60px;
         background-color: #c90017;
     }
     .card{
@@ -58,4 +40,31 @@ require_once(ROUTE_DIR.'views/inc/menu1.html.php');
         background-color: #c90017;
         color: #fff;
     }
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

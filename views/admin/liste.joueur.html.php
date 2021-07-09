@@ -11,7 +11,7 @@ require_once(ROUTE_DIR.'views/inc/barre.html.php');
             <div>
                 <p class="text-center">LISTE DES JOUEURS PAR SCORE</p>
             </div>
-                <div class="card bg-light cardss" >
+                <div class="card bg-light " >
                 <table class="table">
                     <thead>
                         <tr>
@@ -34,7 +34,8 @@ require_once(ROUTE_DIR.'views/inc/barre.html.php');
                 </table>
                 </div>
             <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
-                    <a name="" id="" class="btn btn-danger disabled  " href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.joueur&page='.$precednt;  ?>" role="button">Precedent</a> 
+                <div class="button_pagin">
+                <a name="" id="" class="btn btn-danger disabled  " href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.joueur&page='.$precednt;  ?>" role="button">Precedent</a> 
                     <?php else: ?>
                         <a name="" id="" class="btn btn-danger   " href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.joueur&page='.$precednt;  ?>" role="button">Precedent</a> 
                     <?php endif ?>
@@ -42,6 +43,8 @@ require_once(ROUTE_DIR.'views/inc/barre.html.php');
                     <a name="" id="" class="btn btn-danger disabled   suivant" href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.joueur&page='.$suivant; ?>" role="button">Suivant</a>
                     <?php else: ?>
                         <a name="" id="" class="btn btn-danger   suivant" href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.joueur&page='.$suivant; ?>" role="button">Suivant</a>
+                </div>
+                   
             <?php endif ?> 
         </div>
     </div>

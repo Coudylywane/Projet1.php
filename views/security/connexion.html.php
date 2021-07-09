@@ -10,7 +10,7 @@ if (isset($_SESSION['arrayError'])) {
 <?php require_once(ROUTE_DIR.'views/inc/menu1.html.php')?>
 
 
-  <div class="tout">
+  <div class=" container card bg-light tout " style="height: 400px;">
   <?php if (isset($arrayError['erreurConnexion'])):?>
       <div class="alert alert-primary" role="alert">
      <strong><?php echo isset($arrayError['erreurConnexion']) ? $arrayError['erreurConnexion']: '';?> </strong>
@@ -64,3 +64,22 @@ if (isset($_SESSION['arrayError'])) {
   </form>
   </div>
   <?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
+<style>
+  .row{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .container {
+    margin-top: 1%;
+    margin-left: 0%;
+}
+
+
+
+
+
+</style>

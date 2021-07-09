@@ -33,7 +33,7 @@ function modif_question(array $newQuest){
 function supprimer_question(string $id):bool{
    
   // 1 lire contenu du fichier 
-  $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
+  $json =file_get_contents(FILE_QUESTIONS);
   // 2 convertir le json en tableau
   $arrayQuestion= json_decode($json,true);
    $tab=[];
@@ -57,6 +57,21 @@ function find_all_questions(){
   return json_decode($json,true);
 
 }
+
+
+function recuperer_id(string $id){
+  // 1 lire contenu du fichier 
+  $json =file_get_contents(FILE_QUESTIONS);
+  // 2 convertir le json en tableau
+  $arrayQuestion= json_decode($json,true);
+  foreach($arrayQuestion as $question){
+      if ($question['id']==$id ) {
+        return $question;
+      }
+  }
+  return [];
+}
+
 
 
 

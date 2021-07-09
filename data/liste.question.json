@@ -1,1 +1,62 @@
-[{"controlleurs":"admin","action":"modification","id":"1428328889","question":"je suis normal et rouge","point":"3","type":"checkbox","nbrres":"4","reponse":["nn","ooooo","ppppp","aaaa"],"bonnereponses3":"reponse3","btn_submit":""},{"controlleurs":"admin","action":"creer.question","id":2014880353,"question":"1.capital du senegal","point":"10","type":"radio","nbrres":"4","reponse":["paris","france","senegal","aucun"],"bonnereponse":"reponse3","btn_submit":""},{"controlleurs":"admin","action":"creer.question","id":637987327,"question":"sdsf","point":"11222","type":"checkbox","nbrres":"1","reponse":["q"],"btn_submit":""},{"controlleurs":"admin","action":"creer.question","id":223295547,"question":"comment est une pomme mure","point":"4","type":"checkbox","nbrres":"2","reponse":["Vert","Rouge"],"bonnereponse":"reponse1","btn_submit":""},{"controlleurs":"admin","action":"modification","id":"1781821946","question":"Ou se trouve dakar","point":"3","type":"checkbox","nbrres":"3","reponse":["Senegal","Mauritanie","Maroc"],"bonnereponse":"reponse0","btn_submit":""},{"controlleurs":"admin","action":"creer.question","id":1341626213,"question":"Qui est Messi","point":"4","type":"checkbox","nbrres":"3","reponse":["Coureur","Nageur","Footballeur"],"bonnereponse":"reponse2","btn_submit":""}]
+[
+    {
+        "controlleurs": "admin",
+        "action": "modification",
+        "id": "767222977",
+        "question": "hghgh",
+        "point": "2",
+        "type": "checkbox",
+        "nbrres": "3",
+        "reponse": [
+            "1",
+            "2",
+            "3"
+        ],
+        "bonnereponses0": "reponse0",
+        "bonnereponses1": "reponse1",
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "creer.question",
+        "id": 623469270,
+        "question": "lllllllllll",
+        "point": "1",
+        "type": "radio",
+        "nbrres": "2",
+        "reponse": [
+            "3",
+            "6"
+        ],
+        "bonnereponse": "reponse1",
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "creer.question",
+        "id": 536034947,
+        "question": "ta couleur preferee",
+        "point": "3",
+        "type": "text",
+        "nbrres": "1",
+        "reponse": [
+            "rouge"
+        ],
+        "btn_submit": ""
+    },
+    {
+        "controlleurs": "admin",
+        "action": "modification",
+        "id": "178968094",
+        "question": "Comment est une pomme mure",
+        "point": "2",
+        "type": "radio",
+        "nbrres": "2",
+        "reponse": [
+            "Rouge",
+            "Vert"
+        ],
+        "bonnereponse": "reponse1",
+        "btn_submit": ""
+    }
+]

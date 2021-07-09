@@ -6,23 +6,26 @@ if (isset($_SESSION['arrayError'])) {
 
 ?>
 
-<?php require_once(ROUTE_DIR.'views/inc/header.html.php')?>
-<?php require_once(ROUTE_DIR.'views/inc/menu1.html.php')?>
-<?php if (est_admin()):?>
-<?php require_once(ROUTE_DIR.'views/inc/barre.html.php')?>
-<?php endif ?>
+
+<?php require_once(ROUTE_DIR.'views/inc/header.html.php');
+require_once(ROUTE_DIR.'views/inc/menu1.html.php');
+ if (est_admin()){
+  require_once(ROUTE_DIR.'views/inc/barre.html.php');
+ }
+ 
+?>
 <div class="container">
-        <div class="row">
-        <div class="col-4">
+    <div class="row p-0">
+        <div class="col-md-4">
         <?php if(est_admin()):?>
             <?php require_once(ROUTE_DIR.'views/inc/menu.html.php')?>
          <?php endif?>
         </div>
-        <?php if(est_admin()):?>
-        <div class="col-7">
-        <div class="container border border-lg-light rounded">
-          <div class="row">
-          <div class="col-9">
+        <div class="col-md-8 ">
+            <?php if(est_admin()):?>
+              <div class="container card bg-light">
+          <div class="row p-0">
+          <div class="col-md-9">
 
           <div class="container ">
               <h4>S'INSCRIRE</h4>
@@ -52,8 +55,8 @@ if (isset($_SESSION['arrayError'])) {
                     <?php echo isset($arrayError['login']) ? $arrayError['login']: '';?>
                     </small>
                 </div>
-                <div class="row">
-                  <div class="col-6">
+                <div class="row p-0">
+                  <div class="col-md-6">
                   <div class="mb-2">
                     <label for="password">Password</label>
                     <input type="password" name="password" class="form-control mot-de-pass" placeholder="....."  value="<?= isset($user['password'])?$user['password']:''?>">
@@ -62,7 +65,7 @@ if (isset($_SESSION['arrayError'])) {
                     </small>
                 </div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                 <div class="">
                     <label for="password">Confirm Password</label>
                     <input type="password" name="conpassword" class="form-control mot-de-pass" placeholder="....."  value="<?= isset($user['conpassword'])?$user['conpassword']:''?>">
@@ -90,7 +93,7 @@ if (isset($_SESSION['arrayError'])) {
                     <label for="formFileSm" class="form-label">Avatar</label>
                     <input class="form-control form-control-sm" id="formFileSm" type="file">
                 </div>
-                  <div class="row">
+                  <div class="row p-0">
                     <div class="col-6 mb-2"> 
                       <button type="submit" name="btn-submit" class="btn btn-danger button"><?=isset($user['id'])?'Modifier':'Creer Compte' ?></button>
                     </div>
@@ -107,11 +110,10 @@ if (isset($_SESSION['arrayError'])) {
               </div>
               </div> -->
           </div>
-        </div>
-        <?php else:?>
+          <?php else:?>
           <div class="container border border-lg-light rounded">
-          <div class="row">
-          <div class="col-9">
+          <div class="row p-0">
+          <div class="col-md-9">
 
           <div class="container ">
               <h4>S'INSCRIRE</h4>
@@ -199,22 +201,46 @@ if (isset($_SESSION['arrayError'])) {
           </div>
         <?php endif ?>
         </div>
-        </div>
-       
+    </div>
+</div>
 
-        <?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>    
-       
+<?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
+
 <style>
-  .container-fluid{
-    background-color: #c90017;
-    height: 90px;
-    padding: 0;
-    border: 1px solid #c90017;
-  }
-  .container-fluid img{
-    height: 89px;
-  }
+    .row{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .container {
+    margin-top: 1%;
+    margin-left: 0%;
+}
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

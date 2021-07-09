@@ -10,8 +10,7 @@
             require(ROUTE_DIR.'views/admin/creer.question.html.php');
            }elseif ($_GET['view']=='liste.admin') {
            extract(pagination(find_all_admins(),$_GET['page']));
-  
-           require(ROUTE_DIR.'views/admin/liste.admin.html.php');
+            require(ROUTE_DIR.'views/admin/liste.admin.html.php');
            }elseif ($_GET['view']=='liste.joueur') {
             extract(pagination(find_all_joueurs(),$_GET['page']));
             require(ROUTE_DIR.'views/admin/liste.joueur.html.php');
@@ -21,7 +20,10 @@
             $_SESSION['id']=$_GET['id'];
               $id=$_SESSION['id'];
                $question=recuperer_id($id);
-            require_once(ROUTE_DIR.'views/admin/creer.question.html.php');
+               $_SESSION['nbrres']=$question['nbrres'];
+
+             
+               require_once(ROUTE_DIR.'views/admin/creer.question.html.php');
            }elseif ($_GET['view']=='supprimer') {
             $_SESSION['id']=$_GET['id'];
             $id=$_SESSION['id'];
@@ -32,7 +34,8 @@
               $id = $_SESSION['id'];
               $question=recuperer_id($id);
                $ok = supprimer_question($id);
-            require(ROUTE_DIR.'views/admin/liste.question.html.php');
+               header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');
+               exit();
            }
      }else {
          require_once(ROUTE_DIR.'views/security/connexion.html.php');
@@ -50,19 +53,22 @@
              $type=$_POST['type'];
              $_SESSION['type']=$type;
              $quest=$_POST['question'];
+             
              $_SESSION['question']=$quest;
              $nbrP=$_POST['point'];
              $_SESSION['point']=$nbrP;
              $nbrR=$_POST['nbrres'];
              $_SESSION['nbrres']=$nbrR;
               header('location:'.WEB_ROUTE.'?controlleurs=admin&view=creer.question');
+              exit();
             }
                
       }elseif ($_POST['action']=='modification') {
        
             if (isset($_POST['btn_submit'])) {
                   question($_POST);
-                  header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question');                 exit();
+                  header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question'); 
+                  exit();               
             }elseif (isset($_POST['plus'])) {
               $nbr_pts=$_POST['nbrres'];
               $_SESSION['nbrres']= $nbr_pts;
@@ -77,6 +83,7 @@
               $value=$_SESSION['id'];
 
               header('location:'.WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$value);
+              exit();
             }
           /*  question($_POST);
            header('location:'.WEB_ROUTE.'?controlleurs=admin&view=liste.question'); */
@@ -93,6 +100,7 @@
     valid_point($point,'point',$arrayError);
     valid_nbr_reponse($nbrres,'nbrres',$arrayError);
     valid_type_reponse($type,'type',$arrayError);
+   
 
     if (form_valid($arrayError)){
         if (isset($data['id'])) {
@@ -118,7 +126,7 @@ function pagination($data,$position){
   
   $nbrPage =0;
   $page=1;
-  $suivant=2;
+  $suivant=1;
   $nbrElement = NOMBRE_PAR_PAGE;
  $precednt=0;
 
@@ -127,8 +135,8 @@ function pagination($data,$position){
 if (!isset($position)) {
   $page=1;
    $_SESSION['user_admin'] =  $data;
-   $nbrPage = nombre_page_total( $_SESSION['user_admin'], NOMBRE_PAR_PAGE);
-   $list_user= paginer( $_SESSION['user_admin'],$page, NOMBRE_PAR_PAGE);
+   $nbrPage = nombre_page_total( $_SESSION['user_admin'], $nbrElement);
+   $list_user= paginer( $_SESSION['user_admin'],$page,  $nbrElement);
  
 }
 
@@ -138,8 +146,8 @@ if (!isset($position)) {
    $precednt=$page-1;
        if (isset($_SESSION['user_admin'])) {
            $_SESSION['user_admin'] =  $data;
-           $nbrPage = nombre_page_total( $_SESSION['user_admin'], NOMBRE_PAR_PAGE);
-           $list_user= paginer( $_SESSION['user_admin'],$page, NOMBRE_PAR_PAGE);
+           $nbrPage = nombre_page_total( $_SESSION['user_admin'],  $nbrElement);
+           $list_user= paginer( $_SESSION['user_admin'],$page,  $nbrElement);
           }
 
    }

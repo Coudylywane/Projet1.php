@@ -1,20 +1,18 @@
-<?php require_once(ROUTE_DIR.'views/inc/header.html.php');
-require_once(ROUTE_DIR.'views/inc/menu1.html.php');
-require_once(ROUTE_DIR.'views/inc/barre.html.php');
-
-?>
-
-
+<?php require_once(ROUTE_DIR.'views/inc/header.html.php')?>
+<div class="">
+    <?php require_once(ROUTE_DIR.'views/inc/menu1.html.php')?>
+</div>
+<?php require_once(ROUTE_DIR.'views/inc/barre.html.php')?>
 <div class="container">
-    <div class="row p-0">
-        <div class="col-md-4">
-            <?php require_once(ROUTE_DIR.'views/inc/menu.html.php')?>
-        </div>
-        <div class="col-md-8 ">
-        <div class="container border border-light rounded cdd">
-        <p class="text-center logan">NOMBRE DE QUESTIONS PAR JOUEUR</p> 
+<div class="row">
+<div class="col-4">
+        <?php require_once(ROUTE_DIR.'views/inc/menu.html.php')?>
+</div>
+<div class="col-7  ">
+<div class="container border border-light rounded cdd">
         <button href="#" class="cinq" role=" button" aria-pressed="true">5</button>
         <button href="#"  role=" button"  class="bg-danger" aria-pressed="true">OK</button>
+        <p class="text-center logan">NOMBRE DE QUESTIONS PAR JOUEUR</p> 
     <table class="table">
     <?php 
        
@@ -23,20 +21,20 @@ require_once(ROUTE_DIR.'views/inc/barre.html.php');
                  <td><?= $question['question']?><br>
                 
                 <?php if ($question['type']=='radio'): ?>
-                    <?php foreach($question['reponse'] as $key => $reponse) :?>
-                        <input type="radio" name="coudy"  disabled <?php echo isset($question['bonnereponse']) && $question['bonnereponse']=='reponse'.$key? 'checked': '';?>>  <?= $reponse ?><br>
+                    <?php foreach($question['reponse'] as $reponse) :?>
+                        <input type="radio" name="coudy"><?= $reponse ?><br>
                 <?php endforeach ?>
               
         <?php endif ?>
                 <?php if ($question['type']=='checkbox'): ?>
                 
-                <?php ; foreach($question['reponse'] as $key=> $reponse) :?>
-                    <input type="checkbox" name=""  disabled <?php echo isset($question['bonnereponses'.$key]) ? 'checked': '';?>>  <?= $reponse ?><br>
+                <?php foreach($question['reponse'] as $reponse) :?>
+                    <input type="checkbox" name=""><?= $reponse ?><br>
                 <?php endforeach ?>
         <?php endif ?>
 
         <?php if ($question['type']=='text'): ?>
-                <input type="text" class="mt-3" name="" disabled value="<?= $question['reponse'][0] ?>">   <?= $question['reponse1'] ?></td><br>
+                <input type="text" name=""><?= $question['reponse1'] ?></td><br>
         <?php endif ?>
         <td> 
         <a name="" id="" class="btn btn-danger" href="<?= WEB_ROUTE.'?controlleurs=admin&view=modification&id='.$question['id']?>" role="button">Modifier</a>
@@ -57,43 +55,102 @@ require_once(ROUTE_DIR.'views/inc/barre.html.php');
                 <?php else: ?>
                     <a name="" id="" class="btn btn-danger  mt-2 suivant" href="<?=WEB_ROUTE.'?controlleurs=admin&view=liste.question&page='.$suivant; ?>" role="button">Suivant</a>
                  <?php endif ?>
-        </div>
-    </div>
 </div>
 
-<?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
 
+
+        
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
 <style>
-    .row{
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: 0;
-        margin-left: 0;
-    }
-    .container {
-    margin-top: 1%;
-    margin-left: 0%;
+.bg-primary{
+height: 100px;
 }
 
+.bg-success{
+    height: 50px;
+}
+
+.bg-warning{
+    height: 506px;
+    width: 848px;
+}
+
+.cont{
+    margin-left: -1%;
+}
+
+.cinq{
+    width: 10%;
+    margin-left: 80%;
+    margin-top: 5%;
+}
+
+.logan{
+    margin-top: -5%;
+}
+
+.html{
+    margin-top: -20%;
+}
+
+.btns{
+    margin-left: 82%;
+}
+
+
+.bord{
+    padding-left: 20%;
+    margin-left: -1%;
+}
+
+.images{
+
+margin-top: -19%;
+   width: 15px;
+   height: 15px;
+ margin-left: 65%;
+}
+
+.images1{
+
+margin-top: -19%;
+   width: 15px;
+   height: 15px;
+ margin-left: 35%;
+}
+
+.images2{
+
+margin-top: -19%;
+   width: 15px;
+   height: 15px;
+ margin-left: 98%;
+}
+
+
+
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

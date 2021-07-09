@@ -1,32 +1,28 @@
 <?php 
-
-
-require_once(ROUTE_DIR.'views/inc/header.html.php');
-require_once(ROUTE_DIR.'views/inc/menu1.html.php');
-require_once(ROUTE_DIR.'views/inc/barre.html.php');
-
 if (isset($_SESSION['arrayError'])) {
-  $arrayError=$_SESSION['arrayError'];
-  unset($_SESSION['arrayError']);
+   $arrayError=$_SESSION['arrayError'];
+   unset($_SESSION['arrayError']);
 }
-
 $type=$_SESSION['type'];
 $quest=$_SESSION['question'];
 $nbrP=$_SESSION['point'];
 $nbrR=$_SESSION['nbrres'];
 
-
 ?>
 
 
-
+<?php require_once(ROUTE_DIR.'views/inc/header.html.php')?>
+<div class="">
+    <?php require_once(ROUTE_DIR.'views/inc/menu1.html.php')?>
+</div>
+<?php require_once(ROUTE_DIR.'views/inc/barre.html.php')?>
 <div class="container">
-    <div class="row p-0">
-        <div class="col-md-4">
-            <?php require_once(ROUTE_DIR.'views/inc/menu.html.php')?>
-        </div>
-        <div class="col-md-8 ">
-        <div class="container border border-light rounded">
+<div class="row">
+<div class="col-4">
+        <?php require_once(ROUTE_DIR.'views/inc/menu.html.php')?>
+</div>
+<div class="col-7  ml-4">
+   <div class="container border border-light rounded">
         <div>
            <p class="text-center"><?=isset($question['id'])?'MODIFIER VOTRE QUESTION':'PARAMETRER VOTRE QUESTION' ?></p>
        </div>
@@ -56,19 +52,17 @@ $nbrR=$_SESSION['nbrres'];
               <?php echo isset($arrayError['point']) ? $arrayError['point']: '';?>
         </small>
       </div>
-      <div class="form-group ">
-        <div class="d-flex">
+      <div class="form-group d-flex">
         <label for="">Type de Reponse</label>
         <select class="form-control inpute" name="type" id="" >
          <option value="erreur" >Donner le type de la reponse</option>
           <option value="text" <?=isset($type)? $type:(isset($question['type']) && $question['type']=='text')? 'selected' :'';?> >Text</option>
           <option value="radio" <?= isset($type)? $type : (isset($question['type'])&& $question['type']=='radio')? 'selected' :'';?>>Simple</option>
           <option value="checkbox" <?= isset($type)? $type :isset($question['type']) && $question['type']=='checkbox'? 'selected' :'';?>>Choix multiple</option>
+          <!-- <small id="helpId" class="form-text text-muted">
+              <?php //echo isset($arrayError['reponse']) ? $arrayError['reponse']: '';?>
+        </small> -->
         </select>
-        </div>
-        <small id="helpId" class="form-text text-danger erreur">
-              <?php echo isset($arrayError['point']) ? $arrayError['point']: '';?>
-        </small>
       </div>
     
       <div class="form-group">
@@ -86,20 +80,16 @@ $nbrR=$_SESSION['nbrres'];
         <?php for($i=0;$i<$inputPlus;$i++): ?>
           <div class="form-group d-flex">
           <label for="">Reponse<?=$i?></label>
-            <input type="text" class="form-control inpu" name="reponse[]" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['reponse'][$i])? $question['reponse'][$i] :''?>">
+            <input type="text" class="form-control inpu" name="reponse[]" id="" aria-describedby="helpId" placeholder="" value="">
             <small id="helpId" class="form-text text-danger">
             </small>
-            <?php if($type=='radio' || $question['type']=='radio') :?>
-              <input type="radio" class="form-control ml-4"  style="width: 3%;" name="bonnereponse" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['radio'])? $question['radio'] :'reponse'.$i;?>"  <?php echo isset($question['bonnereponse']) && $question['bonnereponse']=='reponse'.$i? 'checked': '';?>> 
-              <?php  elseif($type=='checkbox' || $question['type']=='checkbox'):?>
-                <input type="checkbox" class="form-control ml-4" style="width: 3%;" name="bonnereponses<?=$i?>" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['checkbox'])? $question['checkbox'] :'reponse'.$i;?>"<?php echo isset($question['bonnereponses'.$i]) ? 'checked': '';?>> 
+            <?php if($type=='radio') :?>
+              <input type="radio" class="form-control ml-4"  style="width: 3%;" name="bonnereponse" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['radio'])? $question['radio'] :'reponse'.$i;?>"> 
+              <?php  elseif($type=='checkbox'):?>
+                <input type="checkbox" class="form-control ml-4" style="width: 3%;" name="bonnereponses<?=$i?>" id="" aria-describedby="helpId" placeholder="" value="<?= isset($question['checkbox'])? $question['checkbox'] :'reponse'.$i;?>"> 
             <?php endif ?>
         </div>
-          <?php endfor ?>
-
-
-
-        <?php
+          <?php endfor ;
           if (isset($_SESSION['nbrres'])) {
             unset($_SESSION['nbrres']);
           }
@@ -121,34 +111,39 @@ $nbrR=$_SESSION['nbrres'];
           }
 
           ?>
-        
+       
        
       <button type="submit" class="btn btn-danger enregistrer"  name="btn_submit"><?=isset($question['id'])?'Modifier':'Enregistrer' ?></button>
       </form>
         </div>
         
    </div>
-            
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php require_once(ROUTE_DIR.'views/inc/footer.html.php')?>
-
 <style>
-    .row{
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: 0;
-        margin-left: 0;
-    }
-    .container {
-    margin-top: 1%;
-    margin-left: 0%;
-}
-
 .bg-primary{
 height: 100px;
 }
@@ -191,45 +186,24 @@ height: 100px;
 
 .enregistrer{
   margin-top: 3%;
-  margin-left: 65%;
+  margin-left: 80%;
   padding-top: 2%;
 }
 
 .input{
-  margin-left: 4%;
+  margin-left: 10%;
 }
 
 .inputs{
-  margin-left: 10%;
+  margin-left: 13%;
 }
 
 .inpute{
   margin-left: 4%;
-  margin-right: 19%;
 }
 
 .inputes{
   margin-left: 6%;
-}
-
-
-.inpu{
-  margin-left: 12%;
-}
-
-.plus{
-  margin-left: 5%;
-  height:40px ;
-}
-
-.erreur{
-  margin-left: 26%;
- 
-}
-
-
-.rest{
-  margin-left: 24%;
 }
 
 
@@ -241,16 +215,14 @@ height: 100px;
   margin-left: 5%;
 }
 
-
-.reste{
-  margin-left: 80%;
-  margin-top: -6%;
+.erreur{
+  margin-left: 26%;
 }
 
+
+
+
 </style>
-
-
-
 
 
 

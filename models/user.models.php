@@ -2,7 +2,7 @@
 
 function find_login_password(string $login, string $password){
     // 1 lire contenu du fichier 
-    $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
+    $json=file_get_contents(FILE_USERS);
     // 2 convertir le json en tableau
     $arrayUser= json_decode($json,true);
     foreach($arrayUser as $user){
@@ -41,18 +41,6 @@ function login_exist(string $login):array{
   return [];
 }
 
-function recuperer_id(string $id){
-  // 1 lire contenu du fichier 
-  $json=file_get_contents(ROUTE_DIR.'data/liste.question.json');
-  // 2 convertir le json en tableau
-  $arrayQuestion= json_decode($json,true);
-  foreach($arrayQuestion as $question){
-      if ($question['id']==$id ) {
-        return $question;
-      }
-  }
-  return [];
-}
 
 
 
@@ -61,7 +49,7 @@ function recuperer_id(string $id){
 
 function modif_admin(array $newUser){
   // 1 lire contenu du fichier 
-  $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
+  $json=file_get_contents(FILE_USERS);
     // 2 convertir le json en tableau
   $arrayUser= json_decode($json,true);
   foreach($arrayUser as $key => $oldUser){
@@ -78,7 +66,7 @@ function modif_admin(array $newUser){
   
   function recuperer_id_admin(string $id){
       // 1 lire contenu du fichier 
-      $json=file_get_contents(ROUTE_DIR.'data/user.data.json');
+      $json=file_get_contents(FILE_USERS);
       // 2 convertir le json en tableau
       $arrayAdmin= json_decode($json,true);
       foreach($arrayAdmin as $admin){

@@ -119,9 +119,9 @@ function valid_nbr_reponse($valeur,string $key,array &$arrayError){
 }
 
 function valid_type_reponse($valeur,string $key,array &$arrayError){
-    if (est_vide($valeur)) {
-        $arrayError[$key] = "Ce champ est obligatoire ";
-    }
+   if ($valeur=='erreur') {
+    $arrayError[$key] = "Ce champ est obligatoire ";
+   }
 }
 
 function nombre_page_total($array, $nombreElement): int {

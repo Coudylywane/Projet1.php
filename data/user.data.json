@@ -248,5 +248,15 @@
         "conpassword": "bbbbbb",
         "btn-submit": "",
         "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "Mama",
+        "nom": "wane",
+        "login": "aicha@gmail.com",
+        "password": "aicha123",
+        "conpassword": "aicha123",
+        "btn-submit": "",
+        "role": "ROLE_JOUEUR",
+        "id": 1833919910
     }
 ]
